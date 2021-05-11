@@ -1,6 +1,13 @@
 import * as React from "react"
-// import { StaticImage } from "gatsby-plugin-image"
 import "../styles/styles.scss"
-const IndexPage = () => <p>Home Page</p>
+
+// Import Components
+import Header from "../components/header"
+
+const IndexPage = () => (
+  <div>
+    <Header />
+  </div>
+)
 
 export default IndexPage
