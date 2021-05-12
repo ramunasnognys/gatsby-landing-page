@@ -6,6 +6,7 @@ html,
 body {
   font-family: $font;
   font-size: 16px;
+  overflow: hidden;
 }
 
 /* || Layout */
@@ -13,7 +14,7 @@ body {
   width: 1640px;
   min-width: 1640px;
   margin: 0 auto;
-
+  border: 2px solid deeppink;
   @media (max-width: 1440px) {
     width: 1280px;
     min-width: 1280px;
@@ -29,10 +30,10 @@ body {
 }
 
 /* || Colors */
-$white: #ffff;
+$white: #fff;
 $black: #000;
 $maroon: #83333e;
-$soft-white: #f2f4f5;
+$off-white: #f2f4f5;
 
 /* || Typography */
 
@@ -43,8 +44,9 @@ header {
   height: 80px;
   width: 100%;
   position: absolute;
-  top: 0;
+  top: 0px;
   z-index: 10;
+
   .inner-header {
     display: flex;
     align-items: center;
@@ -60,7 +62,6 @@ header {
     }
     .navigation {
       nav {
-        border: 2px solid pink;
         a {
           margin: 0 20px;
           text-decoration: none;
@@ -69,10 +70,81 @@ header {
           font-size: 0.75rem;
           color: $black;
           &:last-child {
-            margin-right: 0;
+            margin-right: 0px;
           }
         }
       }
     }
+  }
+}
+
+/* || Banner */
+.banner {
+  display: flex;
+  align-items: center;
+  background-color: $white;
+  position: relative;
+  height: 100vh;
+  border: 2px solid deepskyblue;
+  .row {
+    position: relative;
+    .main-text {
+      font-size: 5.8rem;
+      text-transform: uppercase;
+      letter-spacing: 42px;
+      font-weight: 700;
+      color: $white;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      transform: translateY(-50%);
+      text-align: center;
+      mix-blend-mode: difference;
+      z-index: 9;
+      @media (max-width: 1440px) {
+        font-size: 4.4rem;
+        letter-spacing: 36px;
+      }
+    }
+
+    .main-image {
+      width: 536px;
+      margin: 0 auto;
+      @media (max-width: 1440px) {
+        width: 436px;
+      }
+    }
+    .side-image {
+      width: 260px;
+      position: absolute;
+      @media (max-width: 1440px) {
+        width: 208px;
+      }
+      &.left {
+        left: 168px;
+        top: 12px;
+        @media (max-width: 1440px) {
+          left: 128px;
+        }
+      }
+      &.right {
+        right: 168px;
+        bottom: 12px;
+        @media (max-width: 1440px) {
+          right: 128px;
+        }
+      }
+    }
+  }
+
+  .scroll {
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 1.5px;
+    color: $black;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 48px;
   }
 }
